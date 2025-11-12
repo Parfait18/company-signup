@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-auto bg-white border-r border-r-gray-200 p-8 flex flex-col overflow-y-auto"
+    class="w-auto bg-white border-r border-r-gray-200 flex flex-col overflow-y-auto"
   >
     <!-- Preview Card -->
     <div class="flex flex-row justify-between items-start w-full">
@@ -244,7 +244,7 @@
       </div>
       <div class="bg-[#F9FAFB] min-h-screen flex flex-col w-80">
         <div
-          class="relative flex items-center bg-white justify-end gap-2 mb-8 w-full"
+          class="relative flex items-center bg-white justify-end gap-2 mb-8 w-full px-4"
         >
           <div
             class="absolute left-1/2 -translate-x-1/2 text-xl font-bold text-blue-900 tracking-wider"
@@ -294,8 +294,9 @@
               </defs>
             </svg>
           </div>
-          <div class="flex items-center gap-2 ml-auto">
-            <button class="p-2 hover:bg-gray-200 rounded-lg transition-colors">
+
+          <div class="flex items-end gap-2 ml-auto w-20">
+            <button class="p-1 hover:bg-gray-200 rounded-lg transition-colors">
               <svg
                 class="w-5 h-5 text-gray-600"
                 fill="none"
@@ -310,7 +311,7 @@
                 />
               </svg>
             </button>
-            <button class="p-2 hover:bg-gray-200 rounded-lg transition-colors">
+            <button class="p-1 hover:bg-gray-200 rounded-lg transition-colors">
               <svg
                 class="w-5 h-5 text-gray-600"
                 fill="none"
@@ -325,7 +326,7 @@
                 />
               </svg>
             </button>
-            <button class="p-2 hover:bg-gray-200 rounded-lg transition-colors">
+            <button class="p-1 hover:bg-gray-200 rounded-lg transition-colors">
               <svg
                 class="w-5 h-5 text-gray-600"
                 fill="none"
@@ -366,7 +367,7 @@ const isDev = true; // Temporairement en dur pour le débogage
 if (isDev) {
   watch(
     () => formData,
-    (newValue: string) => {
+    (newValue: any) => {
       console.log('Sidebar - formData updated:', newValue);
     },
     { deep: true }

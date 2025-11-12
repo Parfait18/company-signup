@@ -59,7 +59,7 @@
     >
       <!-- Progress Indicator -->
 
-      <div class="max-w-7xl mx-auto px-8 py-6">
+      <div class="w-8/12 mx-auto px-8 py-6">
         <ProgressIndicator :current-step="2" />
       </div>
 

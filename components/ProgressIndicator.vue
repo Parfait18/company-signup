@@ -1,46 +1,51 @@
 <template>
-  <div class="flex items-start justify-between">
-    <!-- Step 1 -->
-    <div class="flex items-center flex-1">
+  <div>
+    <!-- Progress Steps - Circles and Lines -->
+    <div class="flex items-center mb-6 w-10/12 mx-auto">
+      <!-- Step 1 -->
       <div class="flex flex-col items-center">
         <div
-          class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold mb-2"
+          class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold"
         >
           1
         </div>
-        <span class="text-sm text-gray-900 font-medium whitespace-nowrap">{{
-          $t('steps.step1')
-        }}</span>
       </div>
-      <div class="flex-1 h-0.5 bg-blue-600 mx-4 mt-2"></div>
-    </div>
+      <!-- Line 1-2 -->
+      <div class="flex-1 h-0.5 bg-blue-600 mx-4"></div>
 
-    <!-- Step 2 -->
-    <div class="flex items-center flex-1">
+      <!-- Step 2 -->
       <div class="flex flex-col items-center">
         <div
-          class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold mb-2"
+          class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold"
         >
           2
         </div>
-        <span class="text-sm text-gray-900 font-medium whitespace-nowrap">{{
-          $t('steps.step2')
-        }}</span>
       </div>
-      <div class="flex-1 h-0.5 bg-gray-300 mx-4 mt-2"></div>
-    </div>
+      <!-- Line 2-3 -->
+      <div class="flex-1 h-0.5 bg-gray-200 mx-4"></div>
 
-    <!-- Step 3 -->
-    <div class="flex items-center">
+      <!-- Step 3 -->
       <div class="flex flex-col items-center">
         <div
-          class="w-6 h-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-semibold mb-2"
+          class="w-8 h-8 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-sm font-semibold"
         >
           3
         </div>
-        <span class="text-sm text-gray-500 whitespace-nowrap">{{
-          $t('steps.step3')
-        }}</span>
+      </div>
+    </div>
+
+    <!-- Step Labels -->
+    <div class="flex items-center text-sm">
+      <div class="flex flex-col items-center">
+        <span class="text-gray-900 font-medium">{{ $t('steps.step1') }}</span>
+      </div>
+      <div class="flex-1 mx-4"></div>
+      <div class="flex flex-col items-center">
+        <span class="text-gray-900 font-medium">{{ $t('steps.step2') }}</span>
+      </div>
+      <div class="flex-1 mx-4"></div>
+      <div class="flex flex-col items-center">
+        <span class="text-gray-500">{{ $t('steps.step3') }}</span>
       </div>
     </div>
   </div>
