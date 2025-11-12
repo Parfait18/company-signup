@@ -9,11 +9,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["node", "@vue/runtime-dom"],
-    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["node", "@vue/runtime-dom", "vite/client"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "paths": {
       "#app": ["./.nuxt/types/app"],
       "~/*": ["./*"]

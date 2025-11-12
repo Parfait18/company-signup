@@ -348,21 +348,26 @@
 </template>
 
 <script setup lang="ts">
-// These are auto-imported by Nuxt 3
-const companyStore = useCompanyStore();
+import { useCompanyForm } from '~/composables/useCompanyForm';
+
+const { formData } = useCompanyForm();
 
 // Utilisation de computed pour la réactivité
-const companyName = computed(() => companyStore.name || "Nom de l'entreprise");
-const logo = computed(() => companyStore.logo);
+const companyName = computed(() => formData.name || "Nom de l'entreprise");
+const logo = computed(() => formData.logo);
+const companyDescription = computed(() => formData.description);
+const companySector = computed(() => formData.sector);
+const companyAddress = computed(() => formData.address);
+const companyWebsite = computed(() => formData.website);
 
 // Pour le débogage - commenter en production
 const isDev = true; // Temporairement en dur pour le débogage
 
 if (isDev) {
   watch(
-    () => companyStore.$state,
-    (newValue: typeof companyStore.$state) => {
-      console.log('Sidebar - companyStore updated:', newValue);
+    () => formData,
+    (newValue: string) => {
+      console.log('Sidebar - formData updated:', newValue);
     },
     { deep: true }
   );

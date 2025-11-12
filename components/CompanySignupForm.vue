@@ -238,51 +238,51 @@
 </template>
 
 <script setup lang="ts">
-import type { CompanyFormData } from '~/composables/useCompanyForm';
+import { useCompanyForm } from '~/composables/useCompanyForm';
 
-const { formData, isSubmitting, handleLogoUpload, submitForm, updateFormData } =
+const { formData, errors, isSubmitting, updateFormData, submitForm } =
   useCompanyForm();
 
-// Gestion du changement des champs du formulaire
 const handleInputChange = (e: Event) => {
-  const target = e.target as HTMLInputElement | HTMLTextAreaElement;
-  const name = target.name as keyof CompanyFormData;
-  updateFormData(name, target.value);
+  const target = e.target as HTMLInputElement;
+  const field = target.name as
+    | 'name'
+    | 'description'
+    | 'website'
+    | 'address'
+    | 'sector';
+  if (field) {
+    updateFormData(field, target.value);
+  }
 };
 
-// Pour la suppression du logo
 const deleteLogo = () => {
   updateFormData('logo', null);
 };
 
-const handleLogoChange = async (event: Event) => {
+const handleLogoChange = (event: Event) => {
   const target = event.target as HTMLInputElement;
   const file = target.files?.[0];
-  if (file) {
-    try {
-      await handleLogoUpload(file);
-      // Réinitialiser l'input pour permettre la sélection du même fichier à nouveau
-      target.value = '';
-    } catch (error) {
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Erreur lors de l'upload du logo"
-      );
-    }
-  }
+
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    updateFormData('logo', e.target?.result as string);
+  };
+  reader.readAsDataURL(file);
 };
 
 const handleSubmit = async (e: Event) => {
   e.preventDefault();
-  try {
-    const success = await submitForm();
-    if (success) {
-      // Rediriger ou afficher un message de succès
-      console.log('Formulaire soumis avec succès');
-    }
-  } catch (error) {
-    console.error('Error submitting form:', error);
+
+  if (isSubmitting.value) return;
+
+  const success = await submitForm();
+
+  if (success) {
+    // Rediriger ou afficher un message de succès
+    console.log('Formulaire soumis avec succès');
   }
 };
 </script>
