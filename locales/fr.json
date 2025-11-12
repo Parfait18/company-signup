@@ -1,0 +1,46 @@
+{
+  "steps": {
+    "step1": "Faisons connaissance",
+    "step2": "Créez votre espace de travail",
+    "step3": "Pour mieux vous connaître"
+  },
+  "company": {
+    "title": "Créez votre espace de travail",
+    "logo": {
+      "label": "Logo de l'entreprise",
+      "add": "Ajouter une photo",
+      "modify": "Modifier la photo",
+      "delete": "Supprimer",
+      "format": "au format *.png ou *.jpeg"
+    },
+    "name": {
+      "label": "Nom de l'entreprise",
+      "placeholder": "Renseignez le nom de votre entreprise"
+    },
+    "description": {
+      "label": "Description de l'entreprise",
+      "placeholder": "Décrivez votre entreprise brièvement :",
+      "hints": {
+        "history": "Histoire et chiffres clés",
+        "products": "Produits ou services commercialisés",
+        "culture": "Culture et valeurs"
+      }
+    },
+    "website": {
+      "label": "Site internet",
+      "placeholder": "votre-entreprise.com"
+    },
+    "address": {
+      "label": "Adresse du siège social",
+      "placeholder": "Renseignez l'adresse de votre entreprise"
+    },
+    "sector": {
+      "label": "Secteur d'activité",
+      "placeholder": "Renseignez le secteur d'activité de votre entreprise"
+    }
+  },
+  "buttons": {
+    "back": "Retour",
+    "continue": "Continuer"
+  }
+}
