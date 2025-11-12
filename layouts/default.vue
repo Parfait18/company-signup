@@ -2,12 +2,13 @@
   <div class="min-h-screen bg-gray-100 flex flex-col">
     <!-- Header with centered logo -->
     <header class="bg-white">
-      <div class="max-w-7xl mx-auto px-4 py-2">
+      <div class="max-w-7xl mx-auto px-4 py-2 md:py-4">
         <div class="flex items-center justify-center">
-          <div class="text-3xl font-bold text-blue-900 tracking-wider">
+          <div
+            class="text-xl md:text-3xl font-bold text-blue-900 tracking-wider"
+          >
             <svg
-              width="101"
-              height="32"
+              class="w-20 h-6 md:w-[101px] md:h-8"
               viewBox="0 0 101 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,16 +56,15 @@
     </header>
 
     <div
-      class="flex flex-col mt-10 border-t border-t-gray-100 rounded-xl overflow-hidden w-10/12 mx-auto bg-white"
+      class="flex flex-col mt-4 md:mt-10 border-t border-t-gray-100 rounded-xl overflow-hidden w-full md:w-10/12 mx-auto bg-white"
     >
       <!-- Progress Indicator -->
-
-      <div class="w-8/12 mx-auto px-8 py-6">
+      <div class="w-full md:w-8/12 mx-auto px-4 md:px-8 py-4 md:py-6">
         <ProgressIndicator :current-step="2" />
       </div>
 
       <!-- Main Content -->
-      <div class="flex-1 flex overflow-hidden">
+      <div class="flex-1 flex flex-col lg:flex-row overflow-hidden">
         <slot />
       </div>
     </div>

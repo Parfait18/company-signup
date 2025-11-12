@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-auto bg-white border-r border-r-gray-200 flex flex-col overflow-y-auto"
+    class="hidden lg:flex w-auto bg-white border-r border-r-gray-200 flex-col overflow-y-auto order-1 lg:order-2"
   >
     <!-- Preview Card -->
     <div class="flex flex-row justify-between items-start w-full">

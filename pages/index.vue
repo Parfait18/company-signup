@@ -1,9 +1,9 @@
 <template>
   <NuxtLayout>
-    <!-- Left Side - Form -->
+    <!-- Form (visible on all screens, appears first on mobile) -->
     <CompanySignupForm />
 
-    <!-- Right Side - Preview -->
+    <!-- Preview Sidebar (hidden on mobile, visible on desktop) -->
     <SidebarPreview />
   </NuxtLayout>
 </template>

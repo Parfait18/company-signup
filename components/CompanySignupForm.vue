@@ -1,10 +1,12 @@
 <template>
-  <div class="flex-1 bg-white p-12 overflow-y-auto">
-    <div class="max-w-lg">
+  <div
+    class="flex-1 bg-white p-4 md:p-8 lg:p-12 overflow-y-auto order-2 lg:order-1"
+  >
+    <div class="max-w-lg mx-auto">
       <!-- Back Button -->
       <button
         @click="$router.push('/')"
-        class="flex items-center gap-2 text-gray-700 mb-8 hover:text-gray-900 transition-colors"
+        class="flex items-center gap-2 text-gray-700 mb-4 md:mb-8 hover:text-gray-900 transition-colors"
       >
         <svg
           class="w-4 h-4"
@@ -23,7 +25,7 @@
       </button>
 
       <!-- Form Title -->
-      <h1 class="text-3xl font-bold text-gray-900 mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
         {{ $t('company.title') }}
       </h1>
 
@@ -33,11 +35,13 @@
           <label class="block text-sm font-medium text-gray-900 mb-3">
             {{ $t('company.logo.label') }}
           </label>
-          <div class="flex items-center gap-4">
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          >
             <div class="relative">
               <div
                 v-if="!formData.logo"
-                class="w-20 h-20 rounded-2xl bg-gray-50 border border-gray-200 flex items-center justify-center"
+                class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gray-50 border border-gray-200 flex items-center justify-center"
               >
                 <svg
                   class="w-8 h-8 text-gray-400"
@@ -55,7 +59,7 @@
               </div>
               <div
                 v-else
-                class="w-20 h-20 rounded-2xl bg-white border border-gray-200 flex items-center justify-center overflow-hidden"
+                class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border border-gray-200 flex items-center justify-center overflow-hidden"
               >
                 <img
                   :src="formData.logo"
@@ -64,10 +68,10 @@
                 />
               </div>
             </div>
-            <div class="flex flex-col gap-2">
-              <div class="flex gap-3">
+            <div class="flex flex-col gap-2 flex-1 w-full sm:w-auto">
+              <div class="flex flex-col sm:flex-row gap-3">
                 <label
-                  class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors flex items-center gap-2"
+                  class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors flex items-center justify-center gap-2"
                 >
                   <svg
                     class="w-4 h-4"
@@ -99,7 +103,7 @@
                   @click="deleteLogo()"
                   :disabled="!formData.logo"
                   :class="[
-                    'px-4 py-2.5 border rounded-lg text-sm font-medium transition-colors',
+                    'px-4 py-2.5 border rounded-lg text-sm font-medium transition-colors w-full sm:w-auto',
                     formData.logo
                       ? 'border-gray-300 text-gray-700 hover:bg-gray-50 cursor-pointer'
                       : 'border-gray-200 text-gray-400 cursor-not-allowed',
@@ -203,11 +207,13 @@
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between pt-4">
+        <div
+          class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-0 pt-4"
+        >
           <button
             type="button"
             @click="$router.push('/')"
-            class="flex items-center gap-2 px-6 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg transition-colors"
+            class="flex items-center justify-center gap-2 px-6 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-lg transition-colors w-full sm:w-auto"
           >
             <svg
               class="w-5 h-5"
@@ -227,7 +233,7 @@
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
           >
             {{ isSubmitting ? 'Envoi...' : $t('buttons.continue') }}
           </button>
